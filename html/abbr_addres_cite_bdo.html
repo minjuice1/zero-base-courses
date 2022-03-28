@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <abbr> 약어 (abbreviation), 자동으로 해당 컨텐츠에 도트들을 적용. -->
+  <!-- 해당 태그에 tooltip을 붙일 때 title을 추가해서 설명. -->
+    <p>
+      <abbr title="World Wide Web">WWW</abbr>
+      <abbr title="Hyper Text Markup Language">HTML</abbr>
+      <abbr title="JavaScript">JS</abbr>
+    </p>
+
+  <!-- <address> 주소, 자동으로 해당 컨텐츠에 기울임을 적용. -->
+    <address>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Et deserunt, praesentium esse repellendus error, recusandae sed ab vitae a facere cumque mollitia debitis reiciendis incidunt vel? Ea rerum veniam ad!
+    </address>
+  
+  <!-- <cite> 인용의 출처, 자동으로 해당 컨텐츠에 기울임을 적용. -->
+  <!-- blockquote, figure와 사용할 수 있음 -->
+  <figure>
+    <blockquote>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod molestias in omnis nisi consequatur tempore dolores, et aperiam, quibusdam facere accusantium dolore magni unde corrupti numquam? Nam illo porro ipsum.
+    </blockquote>
+    <figcaption>
+      더미데이터 입니다.
+      <cite>더미데이터의 출처</cite>
+    </figcaption>
+  </figure>
+
+  <!-- <bdo> bidirectional override, 아랍어같은 글자들을 사용할 때 유용  -->
+    <p>이 글은 왼쪽에서 오른쪽으로 작성된다.</p>
+    <p>
+      <!-- dir 속성에 rtl (right to left) -->
+      <bdo dir="rtl">이 글은 오른쪽에서 왼쪽으로 작성된다.</bdo>
+    </p>
+</body>
+</html>
