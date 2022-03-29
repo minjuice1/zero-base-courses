@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- div, span은 non-semantic tags. 즉, 의미가 없는 태그들이라 가급적이면 의미가 있으면 좋음.
+  div는 보통 styling이나 layout을 위해서 사용
+의미론적인 마크업을 사용하면 좋은 점들
+1. (접근성) 검색 엔진은 의미론적 마크업을 분석하여 페이지의 검색 랭킹에 영향을 줄 수 있는 중요한 키워드로 간주한다.
+2. (접근성) 시각 장애가 있는 사용자가 스크린리더로 페이지를 탐색할 때 의미론적 마크업을 푯말로 사용할 수 있다.
+3. (생산성, 가독성) 의미가 없는 끊임없는 div들을 탐색하는 것보다, 의미있는 코드 블록을 찾는 것이 훨씬 쉽다
+4. 개발자에게 태그 안에 채워질 데이터 유형을 제안한다
+5. 의미있는 이름짓기(Semantic naming)는 적절한 사용자 정의 요소/ 구성 요소의 이름짓기(naming)을 반영한다 -->
+<body>
+  <header>Header</header>
+  <nav>메뉴</nav>
+  <!-- main은 무조건 하나만 -->
+  <!-- ie11 이하의 환경에서 main을 쓸 경우에는 <main role="main"> 으로 해주어야 함 -->
+  <main>
+    <!-- article 안에 header, footer를 넣어서 독립적으로 사용 가능 -->
+    <article>
+      본문
+      <header>본문 Header</header>
+      <footer>본문 Footer</footer>
+      <section></section>
+    </article>
+    <!-- article이 아니라고 생각한다면, section을 사용 -->
+    <!-- article안에 section을 사용할 수도 있음 -->
+    <section>
+    </section>
+    <aside>사이드바</aside>
+  </main>
+  <footer>Footer</footer>
+</body>
+</html>
