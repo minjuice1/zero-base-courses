@@ -1,0 +1,22 @@
+- 프로그래밍언어
+
+1. basic : 기본 입출력, 자료형, 연산자 등
+2. condition : if, if else, switch 등
+3. lteration : for, while, do ~ while 등
+4. function : 함수란, 재귀 함수, call by vaule / reference 등
+5. basic object : number, string, array 등
+
+- 기본 수학 이론
+
+알고리즘 복잡도, 경우의 수 (순열과 조합), 점화식
+
+- 자료 구조
+
+1. 선형 자료구조 : 배열, 연결 리스트, 스택, 큐, 해시 테이블, 데크
+2. 비선형 자료구조 : 그래프, 힙, 트리, 트라이
+
+- 알고리즘
+
+탐욕 알고리즘, 분할과 정복, 정렬 알고리즘, 동적 계획법
+
+
