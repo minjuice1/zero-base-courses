@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table>
+    <!-- caption은 무조건 첫번째 요소에 추가해야 함 -->
+    <caption>용돈기입장</caption>
+    <!-- 가독성을 위해 thead, tbody, tfoot을 추가 -->
+    <thead>
+      <tr>
+        <th scope="col">품목</th>
+        <th scope="col">지출</th>
+      </tr>
+    </thead>
+    <!-- 채소, 유제품끼리 따로 묶을 수도 있음 -->
+    <tbody>
+      <tr>
+        <th colspan="2">채소, 과일</th>
+      </tr>
+      <tr>
+        <th scope="row">대파</th>
+        <td>3,000</td>
+      </tr>
+      <tr>
+        <th scope="row">브로콜리</th>
+        <td>4,000</td>
+      </tr>
+      </tbody>
+      <tbody>
+      <tr>
+        <th colspan="2">유제품</th>
+      </tr>
+      <tr>
+        <th scope="row">우유</th>
+        <td>500</td>
+      </tr>
+      <tr>
+        <th scope="row">요거트</th>
+        <td>2,500</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row">total</th>
+        <td>7,500</td>
+      </tr>
+    </tfoot>
+
+  </table>
+</body>
+</html>
