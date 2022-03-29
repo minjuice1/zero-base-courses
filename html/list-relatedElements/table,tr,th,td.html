@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table>
+
+    <!-- tr의 r는 row -->
+    <tr>
+      <!-- th의 h는 head -->
+      <!-- th에 scope로 무엇을 대표하는건지 설정(접근성 측면에서 명시하면 좋음) -->
+      <th scope="col">나라이름</th>
+      <th scope="col">수도</th>
+      <th scope="col">인구</th>
+    </tr>
+
+    <tr>
+      <th scope="row">한국</th>
+      <!-- td의 d는 data -->
+      <td>서울</td>
+      <td>5100만</td>
+    </tr>
+
+    <tr>
+      <th scope="row">미국</th>
+      <!-- td의 d는 data -->
+      <td>워싱턴</td>
+      <td>3억</td>
+    </tr>
+
+    <tr>
+      <!-- colspan으로 차지하는 영역을 확장 -->
+      <td colspan="2">합계</td>
+      <td>3억5100만</td>
+    </tr>
+
+  </table>
+</body>
+</html>
