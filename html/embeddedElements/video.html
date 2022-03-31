@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h2>Video</h2>
+		<!-- boolean형 속성의 controls을 사용해야 수동으로 비디오를 재생시킬 수 있음 -->
+		<!-- 자동으로 재생시키기 위해서는 autoplay, 하지만 몇 비디오들은 처음 렌더링되고나서 바로 동영상이 재생된다면
+    사용자들이 불쾌할거라 생각하여 muted 속성을 적용해주어야만 재생되게 만든 것들도 있기에 그럴땐 muted를 추가.-->
+		<!-- loop 속성을 사용하여 무한 재생되게 설정 할 수 있음 -->
+		<!-- poster 속성을 사용해서 초기 렌더링시 썸네일을 설정해줄 수 있음. -->
+		<video controls autoplay muted loop muted poster="images/small.png">
+			<!-- source 태그를 사용해서 src를 추가할 수 있음 -->
+			<source src="video/videofile.mp4" />
+			Sorry, your browser dosen't support embedded videos.
+		</video>
+	</body>
+</html>
