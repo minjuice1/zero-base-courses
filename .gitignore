@@ -1,0 +1,3 @@
+# vscode가 iginore 되지 않을땐 git rm -r --cached .vscode/
+
+.vscode/
