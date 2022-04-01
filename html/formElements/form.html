@@ -9,9 +9,20 @@
 	<body>
 		<h2>Form</h2>
 		<!-- action을 통해 해당 데이터를 전송한다. -->
-		<!-- metho : 양식을 제출할 때 사용할 http 메서드 (post, get)-->
+		<!-- method : 양식을 제출할 때 사용할 http 메서드 (post, get)-->
 		<form action="" method="GET">
-			<input type="text" name="test" />
+			<div>
+				<label for="foodname">음식 이름: </label>
+				<input type="text" name="food" id="foodname" />
+			</div>
+
+			<div>
+				<!-- input을 label의 자식요소로 사용한다면 for, id 안적어도 됨 -->
+				<label for="color"
+					>색깔 :
+					<input type="text" name="color" id="color" />
+				</label>
+			</div>
 			<button type="submit">제출</button>
 		</form>
 	</body>
