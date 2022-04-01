@@ -11,18 +11,36 @@
 		<!-- action을 통해 해당 데이터를 전송한다. -->
 		<!-- method : 양식을 제출할 때 사용할 http 메서드 (post, get)-->
 		<form action="" method="GET">
-			<div>
-				<label for="foodname">음식 이름: </label>
-				<input type="text" name="food" id="foodname" />
-			</div>
+			<!-- fieldset에 disabled를 쓰므로 전체를 못쓰게 적용할 수 있음. -->
+			<fieldset disabled>
+				<!-- legend는 항상 fieldset의 첫 번째 자식요소 이어야 한다 -->
+				<legend>legend 범례1</legend>
+				<div>
+					<label for="foodname">음식 이름: </label>
+					<input type="text" name="food" id="foodname" />
+				</div>
 
-			<div>
-				<!-- input을 label의 자식요소로 사용한다면 for, id 안적어도 됨 -->
-				<label for="color"
-					>색깔 :
+				<div>
+					<!-- input을 label의 자식요소로 사용한다면 for, id 안적어도 됨 -->
+					<label for="color">색깔 : </label>
 					<input type="text" name="color" id="color" />
-				</label>
-			</div>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>legend 범례2</legend>
+				<div>
+					<label for="foodname">음식 이름: </label>
+					<input type="text" name="food" id="foodname" />
+				</div>
+
+				<div>
+					<!-- input을 label의 자식요소로 사용한다면 for, id 안적어도 됨 -->
+					<label for="color">색깔 : </label>
+					<input type="text" name="color" id="color" />
+				</div>
+			</fieldset>
+
 			<button type="submit">제출</button>
 		</form>
 	</body>
