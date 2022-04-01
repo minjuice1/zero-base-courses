@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h2>Form, Input</h2>
+		<!-- input은 한줄만 입력가능하며, 엔터시 submit 된다. -->
+		<form action="" method="GET">
+			<div>
+				<label>
+					TEXT :
+					<!-- minlength, maxlength로 글자 수 제한 가능 -->
+					<input type="text" name="text" minlength="5" maxlength="10" />
+				</label>
+			</div>
+
+			<div>
+				<label>
+					PASSWORD :
+					<!-- password같은 보안 사항들은 form method POST로 보내어야 함 -->
+					<input type="password" name="pwd" minlength="5" maxlength="10" />
+				</label>
+			</div>
+
+			<div>
+				<label>
+					EMAIL :
+					<input type="email" name="email" minlength="5" maxlength="10" />
+				</label>
+			</div>
+
+			<div>
+				<label>
+					TEL :
+					<!-- password같은 보안 사항들은 form method POST로 보내어야 함 -->
+					<input type="tel" name="tel" />
+				</label>
+			</div>
+
+			<button type="submit">제출</button>
+		</form>
+	</body>
+</html>
