@@ -75,7 +75,46 @@
 				</label>
 			</div>
 
-			<button type="submit">제출</button>
+			<div>
+				<label
+					>CHECKBOX:
+					<!-- check된 box는 url에서 on상태로 바뀜 -->
+					<input type="checkbox" name="checkbox1" />
+					<input type="checkbox" name="checkbox2" checked />
+					<input type="checkbox" name="checkbox3" />
+				</label>
+			</div>
+
+			<div>
+				<label
+					>RADIO :
+					<!-- name을 모두 똑같이하면, 동시선택 불가하고 다르게하면 중복선택 가능 -->
+					<input type="radio" name="radio1" />
+					<input type="radio" name="radio2" checked />
+					<input type="radio" name="radio3" />
+				</label>
+			</div>
+
+			<div>
+				<label
+					>RADIO :
+					<!-- name을 모두 똑같이하면, 동시선택 불가하고 다르게하면 중복선택 가능 -->
+					<!-- value를 추가해야만 어떤 box를 선택하였는지 알 수 있음 (url에서 on상태로 됨) -->
+					<input type="radio" name="checkbox" value="r1" />
+					<input type="radio" name="checkbox" value="r2" />
+					<input type="radio" name="checkbox" value="r3" />
+				</label>
+			</div>
+
+			<input type="button" value="빈 버튼" />
+
+			<!-- value를 통해 input의 텍스트값? 변경 가능. (default는 초기화) -->
+			<!-- form안에 입력한 값들을 모두 초기화 할 수 있음. -->
+			<input type="reset" />
+
+			<!-- <button type="submit">제출</button> -->
+			<!-- value를 통해 input의 텍스트값? 변경 가능. (default는 제출) -->
+			<input type="submit" value="제출하기" />
 		</form>
 	</body>
 </html>
