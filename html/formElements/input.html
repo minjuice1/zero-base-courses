@@ -9,7 +9,7 @@
 	<body>
 		<h2>Form, Input</h2>
 		<!-- input은 한줄만 입력가능하며, 엔터시 submit 된다. -->
-		<form action="" method="GET">
+		< action="" method="GET">
 			<div>
 				<label>
 					TEXT :
@@ -105,6 +105,22 @@
 					<input type="radio" name="checkbox" value="r3" />
 				</label>
 			</div>
+
+			<label for="username">이름 : </label>
+			<!-- autocomplete은 자동완성기능 -->
+      <!-- disabled는 값을 아예 입력도 못하고 데이터도 안넘어가지만
+      readonly는 값을 입력하지 못하지만 데이터는 넘어가고, value로 데이터를 지정해줄 수 있음. -->
+			<input
+				type="text"
+				name="username"
+				id="username"
+				placeholder="홍길동"
+				autocomplete="on"
+				required
+        readonly
+        value="우하하"
+			/>
+      <br>
 
 			<input type="button" value="빈 버튼" />
 
