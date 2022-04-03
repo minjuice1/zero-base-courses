@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h2>Form, Datalist</h2>
+		<form action="" method="GET">
+			<label for="movie">좋아하는 영화 :</label>
+			<input type="text" id="movie" name="movie" list="movie-list" />
+
+			<!-- 추천?해주는 형식 -->
+			<!-- input과 list, id로 묶는다 -->
+			<datalist id="movie-list">
+				<option>주토피아</option>
+				<option>인사이드아웃</option>
+				<option>토이스토리1</option>
+				<option>토이스토리2</option>
+				<option>토이스토리3</option>
+			</datalist>
+			<br />
+
+			<div>
+				<label for="comment">댓글 :</label>
+				<!-- pre태그같이 개행도 다 적용됨 -->
+				<!-- 가로세로 조절하려면 rows, cols보단 css의 width, height -->
+				<textarea name="comment" id="comment" rows="5" cols="20"></textarea>
+			</div>
+
+			<div>
+				<button type="reset"><b>reset</b></button>
+				<button type="submit"><em>제출</em></button>
+			</div>
+		</form>
+	</body>
+</html>
