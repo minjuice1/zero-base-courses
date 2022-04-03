@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="" method="GET">
+			<!-- input은 자식요소를 가질 수 없고, button은 가능 -->
+			<!-- input의 value에는 문자열밖에 넣을 수 없기에, 스타일 적용하기 불편함 -->
+			<div>
+				<input type="reset" value="reset" />
+				<input type="submit" value="제출" />
+				<input type="button" value="빈 버튼" />
+			</div>
+
+			<br />
+
+			<div>
+				<button type="reset"><b>reset</b></button>
+				<button type="submit"><em>제출</em></button>
+				<button type="button">빈 버튼</button>
+			</div>
+		</form>
+	</body>
+</html>
