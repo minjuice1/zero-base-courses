@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h2>Form, Select</h2>
+		<form action="" method="GET">
+			<label for="movie">좋아하는 영화: </label>
+			<select id="movie" name="movie" required>
+				<!-- value에 넣는 값들은 데이터를 넘겨줄 때 사용됨 -->
+				<!-- required 상태에서 default option을 준다면, 그 default가 데이터로 넘어가기 때문에
+        value에 빈값을 추가하고 사용자가 다른 옵션을 선택하게 하자. -->
+				<option value="">--Please choose an option--</option>
+				<!-- optgroup으로 그룹화 할 수 있음 -->
+				<optgroup label="romance">
+					<option value="lalaland">라라랜드</option>
+					<option value="filp">플립</option>
+				</optgroup>
+				<optgroup label="animation">
+					<option value="toystory">토이스토리</option>
+					<option value="zootopia">주토피아</option>
+				</optgroup>
+			</select>
+
+			<hr />
+			<br />
+
+			<div>
+				<button type="reset"><b>reset</b></button>
+				<button type="submit"><em>제출</em></button>
+			</div>
+		</form>
+	</body>
+</html>
