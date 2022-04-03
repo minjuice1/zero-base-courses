@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h2>Form, Input2</h2>
+		<form>
+			<div>
+				<label for="username">이름 :</label>
+				<input type="text" name="username" id="username" />
+			</div>
+
+			<div>
+				<label for="age">나이 :</label>
+				<input type="number" name="age" id="age" />
+			</div>
+
+			<div>
+				<label for="score">평점 :</label>
+				<!-- min, max로 최솟값, 최대값 설정 -->
+				<!-- step으로 간격을 설정 -->
+				<input
+					type="number"
+					name="score"
+					id="score"
+					min="-20"
+					max="20"
+					step="5"
+				/>
+			</div>
+
+			<div>
+				<label for="scoreRange">평점 :</label>
+				<!-- min, max로 최솟값, 최대값 설정 -->
+				<!-- step으로 간격을 설정 -->
+				<input
+					type="range"
+					name="scoreRange"
+					id="scoreRange"
+					min="-20"
+					max="20"
+					step="5"
+				/>
+			</div>
+
+			<input type="reset" />
+			<input type="submit" />
+		</form>
+	</body>
+</html>
