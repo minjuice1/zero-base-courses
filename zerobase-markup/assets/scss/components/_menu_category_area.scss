@@ -1,0 +1,25 @@
+.common-inner {
+  position: relative; // 기준이 되는 box
+
+  &::before {
+    content: ''; // before와 after요소는 content를 무조건 넣어 주어야 함.
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $m-padding; // 몇몇의 컴포넌트에 같은 사이즈로 padding을 주었기에 변수로 뺌.
+    height: 100%;
+    background-image: linear-gradient(to right, #fff 35%, ragb(255,255,255,0));
+    pointer-events: none;
+  }
+  &::after {
+    content: ''; // before와 after요소는 content를 무조건 넣어 주어야 함.
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $m-padding; // 몇몇의 컴포넌트에 같은 사이즈로 padding을 주었기에 변수로 뺌.
+    height: 100%;
+    background-image: linear-gradient(to right, ragb(255,255,255,0), #fff 65%);
+    pointer-events: none;
+  }
+}
+

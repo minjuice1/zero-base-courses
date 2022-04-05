@@ -1,0 +1,5 @@
+@mixin ellipse {
+  text-overflow: ellipsis; // 텍스트가 영역을 넘어가면 말줄임
+  white-space: nowrap; // 텍스트를 오른쪽으로 쭉 이어지게
+  overflow: hidden; // 영역이 넘어가면 감춘다.
+}

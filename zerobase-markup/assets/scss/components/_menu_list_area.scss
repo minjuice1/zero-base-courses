@@ -1,0 +1,16 @@
+.menu-list-area {
+  background-color: #fff;
+
+  &:not(.new):not(.popular) {
+    margin-top: 10px;
+  }
+
+  &.new {
+    border-bottom: 1px solid #fff;
+  }
+
+  .menu-category {
+
+  }
+}
+
