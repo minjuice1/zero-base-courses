@@ -59,3 +59,21 @@ for (let fruit of fruits) {
 for (let key in fruits) {
 	console.log(fruits[key]);
 }
+
+// 배열 탐색
+fruits = ["apple", "orange", "melon", "orange", "banana"];
+console.log(fruits.includes("apple")); // output: true
+console.log(fruits.includes("Apple")); // output: false
+
+// 배열 변환
+// 배열 값을 문자열로 변환 : Array.join(separator)
+fruits = ["apple", "orange", "melon"];
+
+let str = fruits.join();
+console.log(str); // output: apple,orange,melon
+
+let str_separator = fruits.join("&");
+console.log(str_separator); // output: apple&orange&melon
+
+let result = str_separator.split("&");
+console.log(result); // output: [ 'apple', 'orange', 'melon' ]
