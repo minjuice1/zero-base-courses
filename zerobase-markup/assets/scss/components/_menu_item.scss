@@ -1,0 +1,23 @@
+
+.menu-item {
+  font-size: large;
+  color: red;
+  width: 250px;
+  height: 200px;
+  background-color: antiquewhite;
+  text-align: center;
+  margin: 100px;
+  font-size: 25px;
+
+  .menu-desc {
+    margin-top: 10px;
+    letter-spacing: -0.4px;
+    color: blue;
+    @include multi-ellipsis(30px, 30px, 2);
+  }
+}
+
+// .menu-desc {
+//   @include multi-ellipsis(14px, 10px, 2);
+// }
+
