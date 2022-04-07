@@ -6,7 +6,11 @@ for (let i = 0; i < nums.length; i++) {
 }
 
 // forEach()
+<<<<<<< HEAD
 // 배열 요소 별 콜백 함수 각각에 실행: Array.forEach(function(item, index, array){})
+=======
+// 배열 요소 별 콜백 함수 각각에 실행: Array..forEach(function(item, index, array){})
+>>>>>>> f7efa411724510cb8c6af405eb64ae045aff34e4
 // item: 배열 요소, index: 배열 위치, array: 배열
 // output: 1 2 3
 nums.forEach(function (i) {
