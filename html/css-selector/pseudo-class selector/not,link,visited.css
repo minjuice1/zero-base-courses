@@ -1,0 +1,13 @@
+/* :not() */
+
+input:not(.pw) {
+	background-color: aquamarine;
+}
+
+a:link {
+	color: tomato;
+}
+
+a:visited {
+	color: teal;
+}
