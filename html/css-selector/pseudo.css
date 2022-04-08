@@ -1,0 +1,43 @@
+/* Pseudo-Class Selector (가상 클래스 선택자) */
+
+/* 1. first-child */
+li:first-child {
+	color: green;
+}
+
+.movie:first-child {
+	text-decoration: underline;
+}
+
+/* 2. last-child */
+span:last-child {
+	color: tomato;
+}
+
+/* 3. nth-child */
+li:nth-child(3) {
+	color: hotpink;
+}
+
+/* odd, even 같은 요소도 사용 가능 */
+li:nth-child(2n) {
+	color: purple;
+}
+
+/* first-child VS first-of-type */
+
+/* 1. :first-of-type */
+p:first-of-type {
+	color: red;
+}
+
+div:first-of-type {
+	color: darkolivegreen;
+}
+
+/* 2. :last-of-type */
+div:last-of-type {
+	color: aqua;
+}
+
+/* 3. :nth-of-type() */
