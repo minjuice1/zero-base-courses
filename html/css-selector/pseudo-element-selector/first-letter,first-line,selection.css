@@ -7,14 +7,14 @@ first-letter, first-line, selection */
 	font-weight: 700;
 }
 
-.lorem::before {
-	content: "Before";
-}
-
 .lorem::first-line {
 	color: chocolate;
 	font-size: small;
 	font-weight: 700;
+}
+
+.lorem::before {
+	content: "Before";
 }
 
 /* 마우스로 해당 요소를 선택할때(드래그 할때) 나타남 */

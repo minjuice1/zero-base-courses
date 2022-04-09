@@ -1,0 +1,19 @@
+/* Selector Combinators (선택자 결합)
+하위, 자식, 형제 선택자, 그룹화 */
+
+/* ol, ul의 li가 아닌, ul의 li에만 스타일을 적용하고싶다면
+(classname을 주는것 말고) */
+
+/* 하위 선택자 결합은 스페이싱 사용 */
+ul li:last-of-type {
+	color: blue;
+}
+
+/* 자식 선택자 결합은 > 사용 */
+#list > li:last-of-type {
+	color: green;
+}
+
+#list > li:first-of-type {
+	color: red;
+}
