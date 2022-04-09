@@ -1,0 +1,18 @@
+/* Pseudo-Element Selector (가상 요소 선택자)
+before, after */
+
+/* Pseudo-Class Selector (가상 클래스 선택자)
+-> selector:____ */
+
+/* Pseudo-Element Selector (가상 요소 선택자)
+-> selector::____ */
+
+.fav::before {
+	content: "fav : ";
+	color: indianred;
+}
+
+.fav::after {
+	content: "🧡";
+	color: blue;
+}
