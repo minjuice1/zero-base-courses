@@ -1,0 +1,32 @@
+/* Pseudo-Class Selector (가상 클래스 선택자)
+hover, active, focus */
+
+input[type="button"] {
+	background-color: skyblue;
+	border: none;
+}
+
+input[type="button"]:hover {
+	background-color: greenyellow;
+	border: none;
+}
+
+/* 마우스를 누르는 순간부터 떼는 순간까지 */
+/* active는 자신보다 뒤에 위치하고 동등한 클래스가 (:link, :hover, :visited) 덮어쓰기 때문에,
+LVHA (:link - :visited - :hover - :active)순으로 디자인해야 함.
+active 규칙을 다른 모든 링크 규칙들보다 뒤에 배치해야함. */
+
+input[type="button"]:active {
+	background-color: red;
+	border: none;
+}
+
+input[type="button"]:focus {
+	background-color: grey;
+	border: none;
+}
+
+input[type="text"]:focus {
+	background-color: lemonchiffon;
+	border: none;
+}
