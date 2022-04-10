@@ -1,0 +1,23 @@
+/* 상속 제어하기 - initial, inherit, unset */
+
+div {
+	border: 1px solid black;
+	margin: 2px;
+}
+
+.child1 {
+	color: red;
+}
+
+.parent1,
+.parent2 {
+	color: blue;
+}
+
+.parent2 * {
+	color: inherit;
+}
+
+/* unset */
+/* 1. 부모로부터 상속받을 값이 있을 때 : inherit */
+/* 1. 부모로부터 상속받을 값이 없을 때 : initial */
