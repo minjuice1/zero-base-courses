@@ -17,3 +17,39 @@ ul li:last-of-type {
 #list > li:first-of-type {
 	color: red;
 }
+
+/* 1. 일반 형제 선택자 결합 (~) */
+
+/* code라는 요소를 기점으로 무조건 뒤에 있는 selector들에만 적용됨 */
+/* code ~ selector {} */
+code ~ p {
+	color: blue;
+}
+
+code ~ .red {
+	color: red;
+}
+
+/* code라는 요소와 selector가 완전히 서로 붙어있어야 함 */
+/* 2. 인정 형제 선택자 결합 (+) */
+/* code + selector{} */
+
+code + p {
+	background-color: green;
+}
+
+code + div {
+	background-color: grey;
+}
+
+.red + div {
+	background-color: bisque;
+}
+
+/* 3. 그룹화 (,) */
+
+p,
+span,
+code {
+	text-decoration: underline;
+}
