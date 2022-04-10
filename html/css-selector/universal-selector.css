@@ -1,0 +1,17 @@
+/* 범용 선택자 (Universal Selector) */
+
+* {
+	color: red;
+}
+
+div.red {
+	color: blue;
+}
+
+code + * {
+	color: green;
+}
+
+div > * {
+	text-decoration: underline;
+}
