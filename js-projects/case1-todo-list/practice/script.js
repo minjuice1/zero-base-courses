@@ -5,7 +5,10 @@
 		return document.querySelector(target);
 	};
 
+	const API_URL = "http://localhost:3000/todos";
 	const $todos = get(".todos");
+	const $form = get(".todo_form");
+	const $todoInput = get(".todo_input");
 
 	const createTodoElement = (item) => {
 		const { id, content } = item;
@@ -45,15 +48,29 @@
 		$todos.innerHTML = "";
 		todos.forEach((item) => {
 			const todoElement = createTodoElement(item);
+			console.log(todoElement);
 			$todos.appendChild(todoElement);
 		});
 	};
 
 	const getTodos = () => {
-		fetch("http://localhost:3000/todos")
+		fetch(API_URL)
 			.then((response) => response.json())
 			.then((todos) => renderAllTodos(todos))
 			.catch((error) => console.log(error));
+	};
+
+	const submitForms = (e) => {
+		e.preventDefault();
+		const todo = {
+			content: $todoInput.value,
+			completed: false,
+		};
+		fetch(API_URL, {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(todo),
+		});
 	};
 
 	const init = () => {
@@ -61,6 +78,7 @@
 			console.log("DOM fully loaded and parsed");
 			getTodos();
 		});
+		$form.addEventListener("submit", submitForms);
 	};
 	init();
 })();
