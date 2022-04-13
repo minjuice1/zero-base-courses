@@ -1,16 +1,16 @@
-;(function () {
-  'use strict'
+(function () {
+	"use strict";
 
-  const get = (target) => {
-    return document.querySelector(target)
-  }
+	const get = (target) => {
+		return document.querySelector(target);
+	};
 
-  const createTodoElement = (item) => {
-    const { id, content } = item
-    const $todoItem = document.createElement('div')
-    $todoItem.classList.add('item')
-    $todoItem.dataset.id = id
-    $todoItem.innerHTML = `
+	const createTodoElement = (item) => {
+		const { id, content } = item;
+		const $todoItem = document.createElement("div");
+		$todoItem.classList.add("item");
+		$todoItem.dataset.id = id;
+		$todoItem.innerHTML = `
             <div class="content">
               <input
                 type="checkbox"
@@ -35,10 +35,22 @@
                 <i class="fas fa-times"></i>
               </button>
             </div>
-      `
-    return $todoItem
-  }
+      `;
+		return $todoItem;
+	};
 
-  const init = () => {}
-  init()
-})()
+	const getTodos = () => {
+		fetch("http://localhost:3000/todos")
+			.then((response) => response.json())
+			.then((todos) => console.log(todos))
+			.catch((error) => console.log(error));
+	};
+
+	const init = () => {
+		window.addEventListener("DOMContentLoaded", () => {
+			console.log("DOM fully loaded and parsed");
+			getTodos();
+		});
+	};
+	init();
+})();
