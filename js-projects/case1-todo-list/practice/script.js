@@ -1,25 +1,26 @@
-(function () {
-	"use strict";
+;(function () {
+  'use strict'
 
-	const get = (target) => {
-		return document.querySelector(target);
-	};
+  const get = (target) => {
+    return document.querySelector(target)
+  }
 
-	const API_URL = "http://localhost:3000/todos";
-	const $todos = get(".todos");
-	const $form = get(".todo_form");
-	const $todoInput = get(".todo_input");
+  const $todos = get('.todos')
+  const $form = get('.todo_form')
+  const $todoInput = get('.todo_input')
+  const API_URL = 'http://localhost:3000/todos'
 
-	const createTodoElement = (item) => {
-		const { id, content } = item;
-		const $todoItem = document.createElement("div");
-		$todoItem.classList.add("item");
-		$todoItem.dataset.id = id;
-		$todoItem.innerHTML = `
+  const createTodoElement = (item) => {
+    const { id, content, completed } = item
+    const $todoItem = document.createElement('div')
+    const ischecked = completed ? 'checked' : ''
+    $todoItem.classList.add('item')
+    $todoItem.dataset.id = id
+    $todoItem.innerHTML = `
             <div class="content">
               <input
                 type="checkbox"
-                class='todo_checkbox' 
+                class='todo_checkbox' ${ischecked} 
               />
               <label>${content}</label>
               <input type="text" value="${content}" />
@@ -40,45 +41,91 @@
                 <i class="fas fa-times"></i>
               </button>
             </div>
-      `;
-		return $todoItem;
-	};
+      `
+    return $todoItem
+  }
 
-	const renderAllTodos = (todos) => {
-		$todos.innerHTML = "";
-		todos.forEach((item) => {
-			const todoElement = createTodoElement(item);
-			console.log(todoElement);
-			$todos.appendChild(todoElement);
-		});
-	};
+  const renderAllTodos = (todos) => {
+    $todos.innerHTML = ''
+    todos.forEach((item) => {
+      const todoElement = createTodoElement(item)
+      $todos.appendChild(todoElement)
+    })
+  }
 
-	const getTodos = () => {
-		fetch(API_URL)
-			.then((response) => response.json())
-			.then((todos) => renderAllTodos(todos))
-			.catch((error) => console.log(error));
-	};
+  const getTodos = () => {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((todos) => renderAllTodos(todos))
+      .catch((error) => console.error(error.message))
+  }
 
-	const submitForms = (e) => {
-		e.preventDefault();
-		const todo = {
-			content: $todoInput.value,
-			completed: false,
-		};
-		fetch(API_URL, {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(todo),
-		});
-	};
+  const addTodo = (event) => {
+    event.preventDefault()
+    const todo = {
+      content: $todoInput.value,
+      completed: false,
+    }
+    fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(todo),
+    })
+      .then((response) => response.json())
+      .then(getTodos)
+      .then(() => {
+        $todoInput.innerHTML = ''
+        $todoInput.focus()
+      })
+      .then((error) => console.error(error.message))
+  }
 
-	const init = () => {
-		window.addEventListener("DOMContentLoaded", () => {
-			console.log("DOM fully loaded and parsed");
-			getTodos();
-		});
-		$form.addEventListener("submit", submitForms);
-	};
-	init();
-})();
+  const toggleTodo = (e) => {
+    if (e.target.className !== 'todo_checkbox') return
+    const $item = e.target.closest('.item')
+    const id = $item.dataset.id
+    const completed = e.target.checked
+    fetch(`${API_URL}/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ completed }),
+    })
+      .then((response) => response.json())
+      .then(getTodos)
+      .catch((error) => console.error(error.message))
+  }
+
+  const changeEditMode = (e) => {
+    const $item = e.target.closest('.item')
+    const $label = $item.querySelector('label')
+    const $editInput = $item.querySelector('input[type="text"]')
+    const $contentButton = $item.querySelector('.content_buttons')
+    console.log($contentButton)
+    const $editButtons = $item.querySelector('.edit_buttons')
+
+    if (e.target.className === 'todo_edit_button') {
+      $label.style.display = 'none'
+      $editInput.style.display = 'block'
+      $editInput.focus()
+      $contentButton.style.display = 'none'
+      $editButtons.style.display = 'block'
+    }
+
+    if (e.target.className === 'todo_edit_cancel_button') {
+      $label.style.display = 'block'
+      $editInput.style.display = 'none'
+      $contentButton.style.display = 'block'
+      $editButtons.style.display = 'none'
+    }
+  }
+
+  const init = () => {
+    window.addEventListener('DOMContentLoaded', () => {
+      getTodos()
+    })
+    $form.addEventListener('submit', addTodo)
+    $todos.addEventListener('click', toggleTodo)
+    $todos.addEventListener('click', changeEditMode)
+  }
+  init()
+})()
