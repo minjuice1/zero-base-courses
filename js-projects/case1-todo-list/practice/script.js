@@ -101,12 +101,16 @@
     const $editInput = $item.querySelector('input[type="text"]')
     const $contentButton = $item.querySelector('.content_buttons')
     const $editButtons = $item.querySelector('.edit_buttons')
+    const value = $editInput.value
 
     if (e.target.className === 'todo_edit_button') {
       $label.style.display = 'none'
       $editInput.style.display = 'block'
       $contentButton.style.display = 'none'
       $editButtons.style.display = 'block'
+      $editInput.focus()
+      // $editInput.value = ''
+      // $editInput.value = value
     }
 
     if (e.target.className === 'todo_edit_cancel_button') {
@@ -114,6 +118,7 @@
       $editInput.style.display = 'none'
       $contentButton.style.display = 'block'
       $editButtons.style.display = 'none'
+      $editInput.value = $label.innerText
     }
   }
 
