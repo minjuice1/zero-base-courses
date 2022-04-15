@@ -74,8 +74,8 @@
       .then((response) => response.json())
       .then(getTodos)
       .then(() => {
-        $todoInput.innerHTML = ''
         $todoInput.focus()
+        $todoInput.value = ''
       })
       .then((error) => console.error(error.message))
   }
@@ -109,8 +109,8 @@
       $contentButton.style.display = 'none'
       $editButtons.style.display = 'block'
       $editInput.focus()
-      // $editInput.value = ''
-      // $editInput.value = value
+      $editInput.value = ''
+      $editInput.value = value
     }
 
     if (e.target.className === 'todo_edit_cancel_button') {
