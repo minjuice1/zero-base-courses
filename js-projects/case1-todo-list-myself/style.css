@@ -1,0 +1,87 @@
+.todo_input {
+  width: 30%;
+  font-size: 16px;
+  padding: 5px;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+  outline: 0;
+  border: none;
+}
+
+.wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 700px;
+  height: 500px;
+  padding: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content > input[type='checkbox'] {
+  transform: scale(1.5);
+  margin-left: 10px;
+}
+
+.content > label {
+  font-size: 16px;
+  margin-left: 20px;
+  padding-top: 4px;
+  width: 100%;
+}
+
+.content > input[type='text'] {
+  font-size: 16px;
+  margin-left: 20px;
+  padding-top: 4px;
+  padding-left: 0;
+  width: 100%;
+}
+
+.item input[type='text'] {
+  display: none;
+}
+
+.edit_buttons {
+  display: none;
+}
+
+.pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.pagination button {
+  width: 50px;
+  height: 30px;
+  color: #555555;
+  margin: 0 2px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+button > i {
+  pointer-events: none;
+}
