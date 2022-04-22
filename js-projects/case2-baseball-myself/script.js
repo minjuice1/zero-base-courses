@@ -68,10 +68,8 @@
       gameLimit[num] = true
     })
 
-    nums.map((digit, index) => {
-      console.log('digit', digit)
-      console.log('index', answer[index])
-      if (digit === answer[index]) {
+    nums.map((num, index) => {
+      if (answer[index] !== num && !!gameLimit[num]) {
         ball++
       }
     })
