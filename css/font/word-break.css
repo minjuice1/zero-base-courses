@@ -1,0 +1,12 @@
+div {
+	width: 160px;
+	background-color: aquamarine;
+}
+
+.break {
+	word-break: break-all;
+}
+
+.keep {
+	word-break: keep-all;
+}
