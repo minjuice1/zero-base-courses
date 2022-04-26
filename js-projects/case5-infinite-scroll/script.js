@@ -6,13 +6,22 @@
   }
 
   const $posts = get('.posts')
+  const $loader = get('.loader')
 
   const end = 100
   const limit = 10
   let total = 10
   let page = 1
 
-  const getPost = async () => {
+  const hideLoader = () => {
+    $loader.classList.remove('show')
+  }
+
+  const showLoader = () => {
+    $loader.classList.add('show')
+  }
+
+  const getPosts = async (page, limit) => {
     const API_URL = `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`
     const res = await fetch(API_URL)
     if (!res.ok) {
@@ -38,9 +47,16 @@
     })
   }
 
-  const loadPost = async () => {
-    const res = await getPost()
-    showPosts(res)
+  const loadPost = async (page, limit) => {
+    showLoader()
+    try {
+      const res = await getPosts(page, limit)
+      showPosts(res)
+    } catch (error) {
+      console.error(error.message)
+    } finally {
+      hideLoader()
+    }
   }
 
   const onScroll = () => {
@@ -52,13 +68,14 @@
     if (scrollTop + clientHeight >= scrollHeight - 5) {
       page++
       total += 10
-      loadPost()
+      loadPost(page, limit)
+      return
     }
   }
 
   const init = () => {
     window.addEventListener('DOMContentLoaded', () => {
-      loadPost()
+      loadPost(page, limit)
     })
     window.addEventListener('scroll', onScroll)
   }
