@@ -13,6 +13,12 @@
       this.totalItems = this.items.length
       this.current = 0
     }
+
+    initCarousel() {
+      this.items[this.items - 1].classList.add('prev')
+      this.items[0].classList.add('active')
+      this.items[1].classList.add('next')
+    }
   }
 
   window.addEventListener('DOMContentLoaded', () => {
