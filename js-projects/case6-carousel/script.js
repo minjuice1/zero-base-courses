@@ -12,9 +12,20 @@
       this.items = document.querySelectorAll('.carousel_item')
       this.totalItems = this.items.length
       this.current = 0
+      this.isMoving = false
+    }
+
+    disableInteraction() {
+      this.isMoving = true
+      setTimeout(() => {
+        this.isMoving = false
+      }, 1000)
     }
 
     moveCarousel() {
+      if (this.isMoving) return
+      this.disableInteraction()
+
       let prev = this.current - 1
       let next = this.current + 1
 
@@ -38,12 +49,15 @@
     }
 
     initCarousel() {
+      this.isMoving = false
       this.items[this.totalItems - 1].classList.add('prev')
       this.items[0].classList.add('active')
       this.items[1].classList.add('next')
     }
 
     toPrev() {
+      if (this.isMoving) return
+
       if (this.current === 0) {
         this.current = this.totalItems - 1
       } else {
@@ -53,6 +67,8 @@
     }
 
     toNext() {
+      if (this.isMoving) return
+
       if (this.current === this.totalItems - 1) {
         this.current = 0
       } else {
