@@ -31,6 +31,29 @@
     webplay.setAttribute('srcset', './assets/sample.jpg')
   }
 
+  const hashChange = (e) => {
+    e.preventDefault()
+    const parentNode = e.target.closest('figure')
+    const viewTitle = parentNode.querySelector('strong').textContent
+    window.location.hash = `view&${viewTitle}`
+    getViewPage()
+  }
+
+  const getViewPage = () => {
+    const viewTitle = get('.view strong')
+    const urlTItle = decodeURI(window.location.hash.split('&')[1])
+    console.log(urlTItle)
+    viewTitle.innerText = urlTItle
+
+    get('.list').style.display = 'none'
+    get('.view').style.display = 'flex'
+  }
+
+  const getListPage = () => {
+    get('.view').style.display = 'none'
+    get('.list').style.display = 'flex'
+  }
+
   const init = () => {
     $search.addEventListener('keyup', search)
     $searchButton.addEventListener('click', search)
@@ -39,6 +62,17 @@
       $target.addEventListener('mouseover', onMouseOver)
       $target.addEventListener('mouseout', onMouseout)
     }
+    for (let index = 0; index < $list.length; index++) {
+      $list[index].addEventListener('click', hashChange)
+    }
+    window.addEventListener('hashchange', () => {
+      const isView = -1 < window.location.hash.indexOf('view')
+      if (isView) {
+        getViewPage()
+      } else {
+        getListPage()
+      }
+    })
   }
   init()
 })()
