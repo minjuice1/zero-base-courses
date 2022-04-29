@@ -21,9 +21,24 @@
     }
   }
 
+  const onMouseOver = (e) => {
+    const webplay = e.target.parentNode.querySelector('source')
+    webplay.setAttribute('srcset', './assets/sample.webp')
+  }
+
+  const onMouseout = (e) => {
+    const webplay = e.target.parentNode.querySelector('source')
+    webplay.setAttribute('srcset', './assets/sample.jpg')
+  }
+
   const init = () => {
     $search.addEventListener('keyup', search)
     $searchButton.addEventListener('click', search)
+    for (let index = 0; index < $list.length; index++) {
+      const $target = $list[index].querySelector('picture')
+      $target.addEventListener('mouseover', onMouseOver)
+      $target.addEventListener('mouseout', onMouseout)
+    }
   }
   init()
 })()
