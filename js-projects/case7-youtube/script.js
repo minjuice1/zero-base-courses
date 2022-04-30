@@ -8,6 +8,15 @@
   const $list = getAll('.contents.list figure')
   const $searchButton = get('.btn_search')
 
+  const $player = get('.view video')
+  const $btnPlay = get('.js-play')
+  const $btnReplay = get('.js-replay')
+  const $btnStop = get('.js-stop')
+  const $btnMute = get('.js-mute')
+  const $progress = get('.js-progress')
+  const $volume = get('.js-volume')
+  const $fullScreen = get('.js-fullScreen')
+
   const search = () => {
     let searchText = $search.value.toLowerCase()
     for (let index = 0; index < $list.length; index++) {
@@ -42,7 +51,6 @@
   const getViewPage = () => {
     const viewTitle = get('.view strong')
     const urlTItle = decodeURI(window.location.hash.split('&')[1])
-    console.log(urlTItle)
     viewTitle.innerText = urlTItle
 
     get('.list').style.display = 'none'
@@ -52,6 +60,102 @@
   const getListPage = () => {
     get('.view').style.display = 'none'
     get('.list').style.display = 'flex'
+  }
+
+  const buttonChange = (btn, value) => {
+    btn.innerHTML = value
+  }
+
+  const setProgress = () => {
+    let percentage = Math.floor((100 / $player.duration) * $player.currentTime)
+    $progress.value = percentage
+  }
+
+  const getCurrent = (e) => {
+    let percent = e.offsetX / $progress.offsetWidth
+    $player.currentTime = percent * $player.duration
+  }
+
+  const playVideo = () => {
+    if ($player.paused || $player.ended) {
+      buttonChange($btnPlay, 'pause')
+      $player.play()
+    } else {
+      buttonChange($btnPlay, 'play')
+      $player.pause()
+    }
+  }
+
+  const replayVideo = () => {
+    resetPlayer()
+    $player.play()
+    buttonChange($btnPlay, 'pause')
+  }
+
+  const resetPlayer = () => {
+    $progress.value = 0
+    $player.currentTime = 0
+  }
+
+  const stopVideo = () => {
+    $player.pause()
+    $player.currentTime = 0
+    buttonChange($btnPlay, 'play')
+  }
+
+  const mute = () => {
+    if ($player.muted) {
+      buttonChange($btnMute, 'mute')
+      $player.muted = false
+    } else {
+      buttonChange($btnMute, 'unmute')
+      $player.muted = true
+    }
+  }
+
+  const fullScreen = () => {
+    if ($player.requestFullScreen)
+      if (document.fullscreenElement) {
+        document.cancelFullScreen()
+      } else {
+        $player.requestFullScreen()
+      }
+    else if ($player.msRequestFullscreen)
+      if (document.msFullscreenElement) {
+        document.msExitFullscreen()
+      } else {
+        $player.msRequestFullscreen()
+      }
+    else if ($player.webkitRequestFullscreen)
+      if (document.webkitFullscreenElement) {
+        document.webkitCancelFullScreen()
+      } else {
+        $player.webkitRequestFullscreen()
+      }
+    else {
+      alert('Not Supported')
+    }
+  }
+
+  const viewPageEvent = () => {
+    $volume.addEventListener('change', (e) => {
+      $player.volume = e.target.value
+    })
+    $player.addEventListener('timeupdate', setProgress)
+    $player.addEventListener('play', buttonChange($btnPlay, 'pause'))
+    $player.addEventListener('pause', buttonChange($btnPlay, 'play'))
+    $player.addEventListener('volumechange', () => {
+      $player.muted
+        ? buttonChange($btnMute, 'unmute')
+        : buttonChange($btnMute, 'mute')
+    })
+    $player.addEventListener('ended', $player.pause()) // ?
+    $progress.addEventListener('click', getCurrent) // progress표시
+    $btnPlay.addEventListener('click', playVideo)
+    $btnReplay.addEventListener('click', replayVideo)
+    $btnStop.addEventListener('click', stopVideo)
+    $btnMute.addEventListener('click', mute)
+    $fullScreen.addEventListener('click', fullScreen)
   }
 
   const init = () => {
@@ -73,6 +177,7 @@
         getListPage()
       }
     })
+    viewPageEvent()
   }
   init()
 })()
