@@ -140,18 +140,18 @@ dll.insert(10);
 dll.insert(100);
 dll.insert(2, 1);
 dll.insert(3, 3);
-dll.printNode();
-dll.printNodeInverse();
+dll.printNode(); // head -> 100 -> 2 -> 10 -> 3 -> 1 -> null
+dll.printNodeInverse(); // null <- 100 <- 2 <- 10 <- 3 <- 1 <- tail
 
-console.log(dll.remove(1000));
-dll.printNode();
-dll.printNodeInverse();
-console.log(dll.remove(1));
-dll.printNode();
-dll.printNodeInverse();
-console.log(dll.remove(2));
-dll.printNode();
-dll.printNodeInverse();
-console.log(dll.remove(10));
-dll.printNode();
-dll.printNodeInverse();
+console.log(dll.remove(1000)); // null
+dll.printNode(); // head -> 100 -> 2 -> 10 -> 3 -> 1 -> null
+dll.printNodeInverse(); // null <- 100 <- 2 <- 10 <- 3 <- 1 <- tail
+console.log(dll.remove(1)); // 1
+dll.printNode(); // head -> 100 -> 2 -> 10 -> 3 -> null
+dll.printNodeInverse(); // null <- 100 <- 2 <- 10 <- 3 <- tail
+console.log(dll.remove(2)); // 2
+dll.printNode(); // head -> 100 -> 10 -> 3 -> null
+dll.printNodeInverse(); // null <- 100 <- 10 <- 3 <- tail
+console.log(dll.remove(10)); // 10
+dll.printNode(); // head -> 100 -> 3 -> null
+dll.printNodeInverse(); // null <- 100 <- 3 <- tail
