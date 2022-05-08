@@ -22,6 +22,7 @@ function answer(n, m, k) {
 		} else {
 			prev.next = current;
 		}
+		// prev를 업데이트 해줌으로써 뒤쪽에 리스트를 생성시키며 연결해줌.
 		prev = current;
 	}
 	current.next = ll.head;
@@ -29,6 +30,8 @@ function answer(n, m, k) {
 	// 2. start node 설정
 	current = ll.head;
 	while (--m) {
+		// prev = current를 저장하는 이유는
+		// 3번에서 node를 제거하면, prev로 current를 받아와야 하기때문에
 		prev = current;
 		current = current.next;
 	}
