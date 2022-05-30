@@ -16,13 +16,13 @@ section {
 	width: 1020px;
 }
 
-.titleBox {
+.title-box {
 	display: flex;
 	margin-bottom: 24px;
 	line-height: 115%;
 }
 
-.subTitle {
+.sub-title {
 	color: var(--color-gray-600);
 	font-size: 16px;
 	line-height: 115%;
@@ -33,14 +33,14 @@ section {
 	margin-left: 10px;
 }
 
-.gridArea {
+.item-list {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
 	gap: 16px;
 }
 
-.bigCard {
+.big-card {
 	position: relative;
 	width: 502px;
 	height: 310px;
@@ -48,7 +48,7 @@ section {
 	border: 1px solid var(--color-gray-500);
 }
 
-.midCard {
+.mid-card {
 	position: relative;
 	width: 243px;
 	height: 310px;
@@ -56,7 +56,7 @@ section {
 	border: 1px solid var(--color-gray-500);
 }
 
-.floatingBtn {
+.floating-btn {
 	position: absolute;
 	left: 20px;
 	bottom: 20px;
@@ -67,17 +67,17 @@ section {
 	border: none;
 }
 
-.floatingIcon {
+.floating-Icon {
 	width: 100%;
 	height: 100%;
 	object-fit: none;
 }
 
-.activeCard:hover {
+.active-card:hover {
 	border: 1px solid var(--color-blue-600);
 }
 
-.activeBtn::before {
+.active-btn::before {
 	content: "구매하기";
 	display: flex;
 	justify-content: center;
@@ -89,7 +89,7 @@ section {
 	color: var(--color--white);
 }
 
-.floatingIcon .activeBtn {
+.floating-Icon .active-btn {
 	width: 6px;
 	height: 10px;
 	margin-left: 16px;
