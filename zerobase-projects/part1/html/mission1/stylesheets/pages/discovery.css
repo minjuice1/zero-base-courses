@@ -1,1 +1,96 @@
 /* CSS 작성 */
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header {
+	width: 1020px;
+	margin: 100px 0 48px 0;
+}
+
+section {
+	flex-direction: column;
+	width: 1020px;
+}
+
+.titleBox {
+	display: flex;
+	margin-bottom: 24px;
+	line-height: 115%;
+}
+
+.subTitle {
+	color: var(--color-gray-600);
+	font-size: 16px;
+	line-height: 115%;
+}
+
+.divider {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.gridArea {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	gap: 16px;
+}
+
+.bigCard {
+	position: relative;
+	width: 502px;
+	height: 310px;
+	line-height: 23;
+	border: 1px solid var(--color-gray-500);
+}
+
+.midCard {
+	position: relative;
+	width: 243px;
+	height: 310px;
+	line-height: 23.5;
+	border: 1px solid var(--color-gray-500);
+}
+
+.floatingBtn {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	width: 42px;
+	height: 42px;
+	background-color: var(--color-gray-500);
+	opacity: 20;
+	border: none;
+}
+
+.floatingIcon {
+	width: 100%;
+	height: 100%;
+	object-fit: none;
+}
+
+.activeCard:hover {
+	border: 1px solid var(--color-blue-600);
+}
+
+.activeBtn::before {
+	content: "구매하기";
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 112px;
+	height: 42px;
+	background-color: var(--color-blue-600);
+	font-size: 14px;
+	color: var(--color--white);
+}
+
+.floatingIcon .activeBtn {
+	width: 6px;
+	height: 10px;
+	margin-left: 16px;
+}
