@@ -11,6 +11,11 @@ header {
 	margin: 100px 0 48px 0;
 }
 
+.logo-img {
+	width: 176px;
+	height: 40px;
+}
+
 section {
 	flex-direction: column;
 	width: 1020px;
