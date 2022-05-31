@@ -12,7 +12,7 @@
 			href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="/stylesheets/main.css" />
+		<link rel="stylesheet" href="stylesheets/main.css" />
 	</head>
 	<body>
 		<div class="container">
@@ -20,85 +20,118 @@
 				<a href="https://www.coupang.com/">
 					<h1>
 						<picture>
-							<source srcset="assets/logo/logo.webp" />
-							<img src="assets/logo/logo.png" alt="COUPANG" />
+							<source
+								class="logo-img"
+								srcset="assets/logo/logo.webp"
+								type="image/webp"
+								media="all and (max-width: 176px)"
+							/>
+							<img class="logo-img" src="assets/logo/logo.png" alt="COUPANG" />
 						</picture>
 					</h1>
 				</a>
 			</header>
 			<section>
 				<div class="title-box">
+					<span class="title-logo"></span>
 					<h2 class="title">오늘의 쇼핑 제안</h2>
 				</div>
 				<div class="item-list">
-					<div class="big-card active-card">
-						<button class="floating-btn active-btn">30%</button>
-						<div>
-							<a href="/">
-								<img src="assets/offer/furniture.jpg" alt="honeytea" />
-							</a>
-							<div>솔로리빙 셀린 렌지대 60</div>
-							<div>
-								<img src="assets/sprites/rating-stars.png" alt="rating-stars" />
-							</div>
+					<div class="big-card">
+						<button class="floating-btn" alt="상품 할인율 30%">30%</button>
+						<a href="/">
+							<img src="assets/offer/furniture.jpg" alt="honeytea" />
+						</a>
+						<div class="desc">솔로리빙 셀린 렌지대 60...</div>
+						<div class="rating-group">
+							<span
+								class="rating-stars"
+								style="background-position-y: 92%"
+								alt="상품을 구매한 구매자의 평점, 4.5점"
+							></span>
+							<span class="rating" alt="상품을 구매한 구매자의 리뷰 수"
+								>(3,255)</span
+							>
 						</div>
 					</div>
-					<div class="big-card active-card">
-						<button class="floating-btn active-btn">30%</button>
-						<div>
-							<a href="/">
-								<img src="assets/offer/renton.jpg" alt="honeytea" />
-							</a>
-							<div>옆 동네몰 레트로 LED 감성</div>
-							<div>
-								<img src="assets/icon/badge-rocket.svg" alt="로켓배송" />
-							</div>
-							<div>
-								<img src="assets/sprites/rating-stars.png" alt="rating-stars" />
-								<span>(1,807)</span>
-							</div>
+					<div class="big-card">
+						<a href="/">
+							<img src="assets/offer/renton.jpg" alt="honeytea" />
+						</a>
+						<div class="desc">옆 동네몰 레트로 LED 감성...</div>
+						<div class="delivery">
+							<img
+								src="assets/icon/badge-rocket.svg"
+								alt="상품 배송정보, 로켓배송"
+							/>
+						</div>
+						<div class="rating-group">
+							<span
+								class="rating-stars"
+								style="background-position-y: 92%"
+								alt="상품을 구매한 구매자의 평점, 4.5점"
+							></span>
+							<span class="rating" alt="상품을 구매한 구매자의 리뷰 수"
+								>(1,807)</span
+							>
 						</div>
 					</div>
-					<div class="big-card active-card">
-						<div>
-							<a href="/">
-								<img src="assets/offer/drying-rack.jpg" alt="honeytea" />
-							</a>
-							<div>프리미엄 부착식 식기건조</div>
-							<div>
-								<img src="assets/sprites/rating-stars.png" alt="rating-stars" />
-								<span>(2,423)</span>
-							</div>
+					<div class="big-card">
+						<a href="/">
+							<img src="assets/offer/drying-rack.jpg" alt="honeytea" />
+						</a>
+						<div class="desc">프리미엄 부착식 식기건조...</div>
+						<div class="delivery" alt="상품 배송정보, 무료배송">무료배송</div>
+						<div class="rating-group">
+							<span
+								class="rating-stars"
+								style="background-position-y: 81.5%"
+								alt="상품을 구매한 구매자의 평점, 4점"
+							></span>
+							<span class="rating" alt="상품을 구매한 구매자의 리뷰 수"
+								>(2,423)</span
+							>
 						</div>
 					</div>
-					<div class="big-card active-card">
-						<button class="floating-btn active-btn">10%</button>
-						<div>
-							<a href="/">
-								<img src="assets/offer/boohgle.jpg" alt="honeytea" />
-							</a>
-							<div>타지 않는 냄비 보오글 네모</div>
-							<div>
-								<img src="assets/icon/badge-rocket.svg" alt="로켓배송" />
-							</div>
-							<div>
-								<img src="assets/sprites/rating-stars.png" alt="rating-stars" />
-								<span>(1,009)</span>
-							</div>
+					<div class="big-card">
+						<button class="floating-btn" alt="상품 할인율 10%">10%</button>
+						<a href="/">
+							<img src="assets/offer/boohgle.jpg" alt="honeytea" />
+						</a>
+						<div class="desc">타지 않는 냄비 보오글 네모...</div>
+						<div class="delivery">
+							<img
+								src="assets/icon/badge-rocket.svg"
+								alt="상품 배송정보, 로켓배송"
+							/>
+						</div>
+						<div class="rating-group">
+							<span
+								class="rating-stars"
+								style="background-position-y: 102.5%"
+								alt="상품을 구매한 구매자의 평점, 5점"
+							></span>
+							<span class="rating" alt="상품을 구매한 구매자의 리뷰 수"
+								>(1,009)</span
+							>
 						</div>
 					</div>
-					<div class="big-card active-card">
-						<button class="floating-btn active-btn">25%</button>
-						<div>
-							<a href="/">
-								<img src="assets/offer/deskset.jpg" alt="honeytea" />
-							</a>
-							<div>베스트리빙 베이직 멀티 H</div>
-							<div>무료배송</div>
-							<div>
-								<img src="assets/sprites/rating-stars.png" alt="rating-stars" />
-								<span>(3,203)</span>
-							</div>
+					<div class="big-card">
+						<button class="floating-btn" alt="상품 할인율 25%">25%</button>
+						<a href="/">
+							<img src="assets/offer/deskset.jpg" alt="honeytea" />
+						</a>
+						<div class="desc">베스트리빙 베이직 멀티 H...</div>
+						<div class="delivery" alt="상품 배송정보, 무료배송">무료배송</div>
+						<div class="rating-group">
+							<span
+								class="rating-stars"
+								style="background-position-y: 81.5%"
+								alt="상품을 구매한 구매자의 평점, 4점"
+							></span>
+							<span class="rating" alt="상품을 구매한 구매자의 리뷰 수"
+								>(1,009)</span
+							>
 						</div>
 					</div>
 				</div>

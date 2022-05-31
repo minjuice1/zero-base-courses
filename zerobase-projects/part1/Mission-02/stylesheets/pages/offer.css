@@ -1,1 +1,100 @@
 /* 오늘의 쇼핑 제안 */
+
+header,
+section {
+	width: 1022px;
+}
+
+.desc,
+.delivery,
+.rating {
+	text-align: left;
+	font-size: var(--desc-size);
+	line-height: 16.8px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header {
+	margin: 100px 0 48px 0;
+}
+
+h1,
+.logo-img {
+	width: 176px;
+	height: 40px;
+}
+
+.title-box {
+	display: flex;
+	background-image: url("/zerobase-projects/part1/Mission-02/assets/icon/shopping.svg");
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-bottom: 24px;
+	line-height: 115%;
+}
+
+.title {
+	color: var(--color-black);
+	font-size: var(--title-size);
+	font-weight: 500;
+	line-height: 27.6px;
+	margin: 0 0 0 30px;
+}
+
+.floating-btn {
+	position: absolute;
+	width: 53px;
+	height: 30px;
+	border: none;
+	background-color: var(--color-red-500);
+	font-size: var(--discount-size);
+	color: var(--color-white);
+}
+
+.item-list {
+	position: relative;
+	display: flex;
+	gap: 25px;
+}
+
+.big-card {
+	text-align: center;
+	width: 200px;
+	height: 270px;
+}
+
+.big-card > a > img {
+	width: 100%;
+}
+
+.desc {
+	margin: 12px 0 12px 0;
+	font-weight: 400;
+}
+
+.delivery {
+	margin-bottom: 4px;
+	color: var(--color-gray-700);
+	font-weight: 500;
+}
+
+.rating-group {
+	display: flex;
+}
+
+.rating-stars {
+	display: flex;
+	background: url("/zerobase-projects/part1/Mission-02/assets/sprites/rating-stars.png");
+	width: 68px;
+}
+
+.rating {
+	color: var(--color-gray-700);
+	font-weight: 400;
+	margin-left: 4px;
+}
