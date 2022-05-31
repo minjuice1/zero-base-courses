@@ -46,7 +46,7 @@ h1,
 	margin: 0 0 0 30px;
 }
 
-.floating-btn {
+.discount-info {
 	position: absolute;
 	width: 53px;
 	height: 30px;
@@ -54,6 +54,7 @@ h1,
 	background-color: var(--color-red-500);
 	font-size: var(--discount-size);
 	color: var(--color-white);
+	line-height: 150%;
 }
 
 .item-list {
