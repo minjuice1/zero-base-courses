@@ -30,12 +30,10 @@ h1,
 }
 
 .title-box {
-	display: flex;
 	background-image: url("/zerobase-projects/part1/Mission-02/assets/icon/shopping.svg");
 	background-repeat: no-repeat;
 	background-position: left;
 	margin-bottom: 24px;
-	line-height: 115%;
 }
 
 .title {
