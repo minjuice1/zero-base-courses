@@ -1,1 +1,217 @@
 /* 카테고리별 추천 광고상품 */
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header {
+	width: 1020px;
+	height: 56px;
+	margin: 100px 0 48px 0;
+}
+
+section {
+	width: 1020px;
+}
+
+.sub-title,
+.title {
+	margin: 0;
+}
+
+.sub-title {
+	font-size: var(--subtitle-size);
+}
+
+.title {
+	font-size: var(--title-size);
+}
+
+.title > span {
+	color: var(--color-blue-600);
+}
+
+.houseware {
+	color: var(--color-brown-300);
+}
+
+.kitchenware {
+	color: var(--color-green-700);
+}
+
+.houseware-items {
+	display: flex;
+	width: 1020px;
+	margin-top: 24px;
+	border-top: 1px solid var(--color-brown-300);
+	border-bottom: 1px solid var(--color-brown-300);
+}
+
+.kitchenware-items {
+	display: flex;
+	width: 1020px;
+	margin-top: 24px;
+	border-top: 1px solid var(--color-green-700);
+	border-bottom: 1px solid var(--color-green-700);
+}
+
+.side-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0 24px;
+}
+
+.category-title {
+	margin: 48px 0 8px 0;
+}
+
+.category-title {
+	margin: 48px 0 8px 0;
+}
+
+.category-link {
+	background-image: url(/zerobase-projects/part1/mission-03/assets/icon/angle-right-default.svg);
+	background-repeat: no-repeat;
+	background-position: right 60%;
+	color: var(--color-gray-700);
+	font-size: var(--category-link-size);
+	font-weight: bold;
+	line-height: 120%;
+}
+
+.category-link > span {
+	margin-left: 11px;
+}
+
+.hot-keywords-title {
+	font-size: var(--hotkeywords-size);
+	margin-bottom: 12px;
+}
+
+.hot-keywords {
+	display: inline-flex;
+	flex-direction: column;
+	width: 124px;
+	font-size: var(--keywords-list-size);
+}
+
+.hot-keywords > div {
+	border: 1px solid var(--color-gray-300);
+	padding: 10px 6px;
+	margin-bottom: 12px;
+}
+
+.imagebox {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+.carousel-item {
+	display: none;
+}
+
+.carousel-item.active {
+	display: block;
+}
+
+.carousel-img {
+	width: 320px;
+	height: 631px;
+}
+
+.carousel-desc {
+	position: absolute;
+	bottom: 58px;
+	left: 30px;
+	width: 260px;
+	height: 90px;
+	text-align: center;
+	border: none;
+	color: var(--color-white);
+}
+
+.carousel-desc.houseware {
+	background-color: var(--color-brown-300);
+}
+
+.carousel-desc.kitchenware {
+	background-color: var(--color-green-700);
+}
+
+.carousel-desc > div:nth-child(1) {
+	font-size: var(--carousel-title);
+	font-weight: bold;
+	padding: 19px 0 8px 0;
+}
+.carousel-desc > div:nth-child(2) {
+	font-size: var(--carousel-subtitle);
+	padding-bottom: 20px;
+}
+
+.carousel-slide {
+	position: absolute;
+	text-align: center;
+	bottom: 22px;
+	left: 144px;
+}
+
+.carousel-indicator {
+	width: 12px;
+	height: 12px;
+	background-color: var(--color-gray-600);
+	border-radius: 100%;
+	margin: 0 4px 0 4px;
+	list-style: none;
+}
+
+.carousel-indicator.active {
+	background-color: var(--color-gray-700);
+}
+
+.carousel-indicators {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.item-lists {
+	display: flex;
+	flex-wrap: wrap;
+	align-self: center;
+}
+
+.item-card {
+	width: 160px;
+	height: 300px;
+	margin: 9px 0 0 16px;
+}
+
+.item-lists > div:nth-child(3)::after {
+	/* color: var(--color-gray-600); */
+	border: 1px solid red;
+}
+
+.item-desc {
+	font-size: var(--card-text);
+	margin: 12px 0;
+}
+
+.price-info {
+	font-size: var(--card-text);
+	color: var(--color-red-500);
+	margin-bottom: 4px;
+}
+
+.item-price {
+	font-size: var(--card-price);
+	font-weight: bolder;
+}
+
+.won {
+	font-size: var(--card-text);
+	margin: 0 6px 0 3px;
+}
