@@ -1,1 +1,212 @@
 /* 헤더 */
+
+div {
+	display: inline-block;
+}
+
+header {
+	border: 1px solid var(--color-gray-100);
+}
+
+.login-bar {
+	width: 1920px;
+	height: 34px;
+	display: flex;
+	justify-content: center;
+	background-color: var(--color-gray-100);
+}
+
+.link-lists {
+	width: 1020px;
+	display: flex;
+	align-items: center;
+	padding: 0;
+	font-size: var(--base-size);
+	list-style: none;
+}
+
+.link-lists li {
+	margin-right: 8px;
+}
+
+.link-lists li:nth-child(3) {
+	margin-left: 736px;
+}
+
+.logo {
+	width: 176px;
+	height: 40px;
+	display: inline-block;
+	background-image: url("/zerobase-projects/part1/Mission-04/assets/logo/logo.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin: 0;
+}
+
+.grid-area {
+	display: grid;
+}
+
+.button--category {
+	width: 110px;
+	height: 116px;
+	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/hamburger.svg");
+	background-repeat: no-repeat;
+	background-position: center 40%;
+	background-color: var(--color-blue-600);
+	font-size: var(--base-size);
+	color: var(--color-white);
+	border: 0;
+	padding: 0;
+	margin-right: 40px;
+	padding-top: 44px;
+}
+
+form {
+	width: 516px;
+	height: 40px;
+	display: flex;
+	border: 1px solid var(--color-blue-600);
+}
+
+select {
+	width: 135px;
+	font-size: var(--base-size);
+	color: var(--color-gray-700);
+	border: none;
+	border-right: 1px solid var(--color-gray-100);
+}
+
+input {
+	width: 301px;
+	font-size: var(--base-size);
+	color: var(--color-gray-600);
+	text-indent: 10px;
+	border: none;
+	padding: 0;
+}
+
+form button {
+	width: 40px;
+	border: 0;
+	padding: 0;
+}
+
+.search-btn-mic {
+	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/mic.svg");
+	background-position: center;
+	background-color: transparent;
+}
+
+.search-btn-search {
+	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/search.svg");
+	background-position: center;
+	background-color: transparent;
+}
+
+.myCoupang button,
+.cart button {
+	width: 90px;
+	height: 58px;
+	background-repeat: no-repeat;
+	background-position: center 10%;
+	font-size: var(--base-size);
+	border: none;
+	background-color: transparent;
+	padding-top: 35px;
+}
+
+.myCoupang ul {
+	display: none;
+}
+
+.is--active ul {
+	width: 90px;
+	height: 137px;
+	display: block;
+	text-align: center;
+	font-size: var(--base-size);
+	border: 1px solid var(--color-gray-300);
+	padding: 0;
+	margin-top: 7px;
+	list-style: none;
+}
+
+.is--active li:nth-child(1) {
+	margin: 31px 0 20px 0;
+}
+.is--active li:nth-child(2) {
+	margin: 20px 0;
+}
+.is--active li:nth-child(3) {
+	margin: 20px 0 24px 0;
+}
+
+.myCoupang button {
+	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/my-coupang.svg");
+}
+
+.cart button {
+	position: relative;
+	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/cart.svg");
+}
+
+.cart-count {
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: 0;
+	right: 22px;
+	background-color: var(--color-blue-600);
+	border-radius: 50%;
+	text-align: center;
+	font-size: var(--base-size);
+	color: var(--color-white);
+	padding-top: 2px;
+}
+
+.cart > div {
+	display: none;
+}
+
+.cart--empty > div {
+	width: 288px;
+	height: 99px;
+	display: block;
+	background-color: var(--color-white);
+	font-size: var(--empty-cart-size);
+	border: 1px solid var(--color-gray-300);
+	text-align: center;
+	padding-top: 44px;
+}
+
+.link-bar {
+	display: inline-block;
+	font-size: var(--base-size);
+}
+
+.link-bar > div {
+	margin-right: 32px;
+}
+
+.link-bar > div:first-child {
+	margin-left: 50px;
+}
+
+.link-bar > div:last-child {
+	margin-right: 0;
+}
+
+.icon {
+	width: 14px;
+	height: 14px;
+	background-repeat: no-repeat;
+}
+
+.icon.rocket {
+	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/icon-rocket.svg");
+}
+
+.icon.fresh {
+	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/icon-fresh.svg");
+}

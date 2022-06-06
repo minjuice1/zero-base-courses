@@ -17,49 +17,70 @@
 	</head>
 	<body>
 		<header>
-			<ul class="login-bar">
-				<li>쿠팡플레이</li>
-				<li>제휴마케팅</li>
-				<li>로그인</li>
-				<li>회원가입</li>
-				<li>고객센터</li>
-			</ul>
-			<div class="logo">
-				<a href="https://www.coupang.com" rel="noopener noreferrer" target="_blank">
-					<h1>Coupang</h1>
-				</a>
-			</div>
-			<button class="button--category">카테고리</button>
-			<form>
-				<select>
-					<img>
-				</select>
-				<input type="search" placeholder="찾고싶은 상품을 검색해 보세요!">
-				<button></button>
-				<button></button>
-			</form>
-			<div class="myCoupang">
-				<button>마이쿠팡</button>
-				<ul>
-					<li>주문목록</li>
-					<li>취소/반품</li>
-					<li>찜리스트</li>
+			<div class="login-bar">
+				<ul class="link-lists">
+					<li><a href="/">쿠팡플레이</a></li>
+					<li><a href="/">제휴마케팅</a></li>
+					<li><a href="/">로그인</a></li>
+					<li><a href="/">회원가입</a></li>
+					<li><a href="/">고객센터</a></li>
 				</ul>
 			</div>
-			<div>
-				<div><span></span><button>장바구니</button></div>
-				<div class="cart">장바구니에 담긴 상품이 없습니다.</div>
+			<div class="grid-area">
+				<a
+					href="https://www.coupang.com"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					<div class="logo">
+						<h1 class="sr-only">Coupang</h1>
+					</div>
+				</a>
+				<button class="button--category">카테고리</button>
+
+				<form>
+					<select>
+						<option>전체<span></span></option>
+					</select>
+					<input type="search" placeholder="찾고싶은 상품을 검색해 보세요!" />
+					<button class="search-btn-mic"></button>
+					<button class="search-btn-search"></button>
+				</form>
+				<div class="myCoupang">
+					<button>마이쿠팡</button>
+					<ul>
+						<li>주문목록</li>
+						<li>취소/반품</li>
+						<li>찜리스트</li>
+					</ul>
+				</div>
+				<div class="cart">
+					<button>
+						장바구니
+						<div class="cart-count">0</div>
+					</button>
+					<div class="cart-lists">장바구니에 담긴 상품이 없습니다.</div>
+				</div>
+				<div class="link-bar">
+					<div>
+						<div class="icon rocket"></div>
+						로켓배송
+					</div>
+					<div>
+						<div class="icon fresh"></div>
+						로켓프레시
+					</div>
+					<div>
+						2022년 설날<span><img src="assets/icon/new.svg" alt="new" /></span>
+					</div>
+					<div>로켓직구</div>
+					<div>골드박스</div>
+					<div>정기배송</div>
+					<div>이벤트/쿠폰</div>
+					<div>기획전</div>
+					<div>여행티켓</div>
+				</div>
 			</div>
-			<div>
-				<div><span></span>로켓배송</div>
-				<div><span></span>로켓프레시</div>
-				<div>2022년 설날<span></span></div>
-				<div>로켓직구</div>
-				<div>골드박스</div>
-				<div>정기배송</div>
-				<div>이벤트/쿠폰</div>
-				<div>기획전</div>
-				<div>여행티켓</div>
-			</div>
+		</header>
 	</body>
 </html>
