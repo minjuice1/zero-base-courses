@@ -106,14 +106,17 @@ form button {
 
 .myCoupang button,
 .cart button {
-	width: 90px;
-	height: 58px;
 	background-repeat: no-repeat;
 	background-position: center 10%;
 	font-size: var(--base-size);
 	border: none;
 	background-color: transparent;
 	padding-top: 35px;
+}
+
+.myCoupang {
+	width: 60px;
+	height: 58px;
 }
 
 .myCoupang ul {
@@ -165,6 +168,10 @@ form button {
 	padding-top: 2px;
 }
 
+.cart {
+	width: 60px;
+	height: 58px;
+}
 .cart > div {
 	display: none;
 }
