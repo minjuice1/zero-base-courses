@@ -77,6 +77,10 @@ header {
 	line-height: 120%;
 }
 
+.ic-theme img {
+	margin-left: 4px;
+}
+
 .first-depth a {
 	display: flex;
 }
