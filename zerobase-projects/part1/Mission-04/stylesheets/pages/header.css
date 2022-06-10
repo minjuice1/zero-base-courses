@@ -9,7 +9,6 @@ header {
 }
 
 .login-bar {
-	width: 1920px;
 	height: 34px;
 	display: flex;
 	justify-content: center;
@@ -45,11 +44,23 @@ header {
 
 .grid-area {
 	display: grid;
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
+}
+
+.grid-area a {
+	height: 40px;
+	grid-row: 1/2;
+	grid-column: 2/2;
+	margin-right: 30px;
 }
 
 .button--category {
 	width: 110px;
 	height: 116px;
+	grid-row: 1/3;
+	grid-column: 1/1;
 	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/hamburger.svg");
 	background-repeat: no-repeat;
 	background-position: center 40%;
@@ -66,15 +77,28 @@ form {
 	width: 516px;
 	height: 40px;
 	display: flex;
+	grid-row: 1/2;
+	grid-column: 3/5;
 	border: 1px solid var(--color-blue-600);
+	margin-right: 46px;
 }
 
 select {
 	width: 135px;
 	font-size: var(--base-size);
 	color: var(--color-gray-700);
+	text-indent: 12px;
 	border: none;
 	border-right: 1px solid var(--color-gray-100);
+
+	/* dropdown */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url("../../assets/icon/MoreDown.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position-x: 90%;
 }
 
 input {
@@ -117,6 +141,10 @@ form button {
 .myCoupang {
 	width: 60px;
 	height: 58px;
+	position: relative;
+	grid-row: 1/2;
+	grid-column: 5/6;
+	margin-right: 10px;
 }
 
 .myCoupang ul {
@@ -126,13 +154,32 @@ form button {
 .is--active ul {
 	width: 90px;
 	height: 137px;
+	position: absolute;
+	left: -18px;
 	display: block;
 	text-align: center;
+	background-color: var(--color-white);
 	font-size: var(--base-size);
 	border: 1px solid var(--color-gray-300);
 	padding: 0;
 	margin-top: 7px;
+	margin-right: 40px;
 	list-style: none;
+	z-index: 10;
+}
+
+.is--active ul span {
+	width: 7px;
+	height: 7px;
+	position: absolute;
+	right: 38px;
+	top: 0;
+	background-color: var(--color-white);
+	border-right: 1px solid var(--color-gray-300);
+	border-bottom: 1px solid var(--color-gray-300);
+	transform: rotate(225deg);
+	margin-top: -4px;
+	z-index: 100;
 }
 
 .is--active li:nth-child(1) {
@@ -158,8 +205,8 @@ form button {
 	width: 18px;
 	height: 18px;
 	position: absolute;
-	top: 0;
-	right: 22px;
+	top: 1px;
+	right: 10px;
 	background-color: var(--color-blue-600);
 	border-radius: 50%;
 	text-align: center;
@@ -171,37 +218,61 @@ form button {
 .cart {
 	width: 60px;
 	height: 58px;
+	position: relative;
+	grid-row: 1/2;
+	grid-column: 6/6;
 }
+
 .cart > div {
 	display: none;
+}
+
+.cart-lists span {
+	width: 7px;
+	height: 7px;
+	position: absolute;
+	right: 20px;
+	top: 0;
+	background-color: var(--color-white);
+	border-right: 1px solid var(--color-gray-300);
+	border-bottom: 1px solid var(--color-gray-300);
+	transform: rotate(225deg);
+	margin-top: -4px;
+	z-index: 100;
 }
 
 .cart--empty > div {
 	width: 288px;
 	height: 99px;
+	position: absolute;
+	right: 0;
 	display: block;
 	background-color: var(--color-white);
 	font-size: var(--empty-cart-size);
 	border: 1px solid var(--color-gray-300);
 	text-align: center;
-	padding-top: 44px;
+	padding-top: 36px;
+	margin: 6px 10px 0 0;
+	z-index: 10;
 }
 
 .link-bar {
 	display: inline-block;
+	grid-row: 2/2;
+	grid-column: 2/6;
 	font-size: var(--base-size);
 }
 
 .link-bar > div {
-	margin-right: 32px;
+	margin-right: 28px;
 }
 
-.link-bar > div:first-child {
-	margin-left: 50px;
+.link-bar > div:nth-child(3) > span {
+	margin-left: 4px;
 }
 
 .link-bar > div:last-child {
-	margin-right: 0;
+	margin-right: 85px;
 }
 
 .icon {
@@ -212,8 +283,10 @@ form button {
 
 .icon.rocket {
 	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/icon-rocket.svg");
+	margin-right: 4px;
 }
 
 .icon.fresh {
 	background-image: url("/zerobase-projects/part1/Mission-04/assets/icon/icon-fresh.svg");
+	margin-right: 4px;
 }
