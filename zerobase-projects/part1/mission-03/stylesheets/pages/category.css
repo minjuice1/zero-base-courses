@@ -190,9 +190,12 @@ section {
 	margin: 9px 0 0 16px;
 }
 
-.item-lists > div:nth-child(3)::after {
-	/* color: var(--color-gray-600); */
-	border: 1px solid red;
+.item-lists::after {
+	content: "";
+	width: 528px;
+	position: absolute;
+	top: 317px;
+	border-bottom: 1px solid var(--color-gray-600);
 }
 
 .item-desc {
