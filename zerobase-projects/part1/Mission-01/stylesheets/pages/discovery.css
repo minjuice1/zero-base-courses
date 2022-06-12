@@ -71,6 +71,7 @@ section {
 	background-color: var(--color-gray-500);
 	opacity: 20;
 	border: none;
+	cursor: pointer;
 }
 
 .floating-Icon {
@@ -79,12 +80,19 @@ section {
 	object-fit: none;
 }
 
-.active-card:hover {
+.active-card:hover,
+.active-card:focus,
+.active-card:focus-within {
 	border: 1px solid var(--color-blue-600);
 }
 
-.active-btn::before {
+.active-card:hover::after,
+.active-card:focus::after,
+.active-card:focus-within::after {
 	content: "구매하기";
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -93,10 +101,6 @@ section {
 	background-color: var(--color-blue-600);
 	font-size: 14px;
 	color: var(--color--white);
-}
-
-.floating-Icon .active-btn {
-	width: 6px;
-	height: 10px;
-	margin-left: 16px;
+	cursor: pointer;
+	transition: all 500ms ease-in;
 }
