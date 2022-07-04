@@ -110,7 +110,7 @@ h2 {
 }
 
 .item_buttons {
-  width: 118px;
+  flex-shrink: 0;
 }
 
 .item_buttons > button {
@@ -123,7 +123,22 @@ h2 {
 
 .item_buttons > button:first-child {
   background-color: #bad4f5;
-  margin-right: 8px;
+}
+
+.item_buttons > button.todo_recomend_button {
+  background-color: yellowgreen;
+}
+
+.item_buttons > button.todo_recomend_button .fas {
+  display: none;
+}
+
+.item_buttons > button.todo_recomend_button.active .fas {
+  display: block;
+}
+
+.item_buttons > button.todo_recomend_button.active .far {
+  display: none;
 }
 
 .todo_checkbox {
