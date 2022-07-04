@@ -4,56 +4,20 @@
   const get = (target) => {
     return document.querySelector(target)
   }
-
   const getAll = (target) => {
     return document.querySelectorAll(target)
   }
 
-  const API_URL = 'http://localhost:3000/todos'
   const $todos = get('.todos')
   const $form = get('.todo_form')
   const $todoInput = get('.todo_input')
   const $pagination = get('.pagination')
+  const API_URL = `http://localhost:3000/posts`
 
-  const limit = 5
-  let currentPage = 5
-  const totalCount = 89
+  let currentPage = 1
+  const totalCount = 53
   const pageCount = 5
-
-  const createTodoElement = (item) => {
-    const { id, content, completed } = item
-    const $todoItem = document.createElement('div')
-    const ischecked = completed ? 'checked' : ''
-    $todoItem.classList.add('item')
-    $todoItem.dataset.id = id
-    $todoItem.innerHTML = `
-            <div class="content">
-              <input
-                type="checkbox"
-                class='todo_checkbox' ${ischecked} 
-              />
-              <label>${content}</label>
-              <input type="text" value="${content}" />
-            </div>
-            <div class="item_buttons content_buttons">
-              <button class="todo_edit_button">
-                <i class="far fa-edit"></i>
-              </button>
-              <button class="todo_remove_button">
-                <i class="far fa-trash-alt"></i>
-              </button>
-            </div>
-            <div class="item_buttons edit_buttons">
-              <button class="todo_edit_confirm_button">
-                <i class="fas fa-check"></i>
-              </button>
-              <button class="todo_edit_cancel_button">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-      `
-    return $todoItem
-  }
+  const limit = 5
 
   const pagination = () => {
     let totalPage = Math.ceil(totalCount / limit)
@@ -85,8 +49,6 @@
     $currentPageNumber.style.color = '#9dc0e8'
 
     const $currentPageNumbers = getAll(`.pagination button`)
-    console.log($currentPageNumbers)
-
     $currentPageNumbers.forEach((button) => {
       button.addEventListener('click', () => {
         if (button.dataset.fn === 'prev') {
@@ -102,6 +64,42 @@
     })
   }
 
+  const createTodoElement = (item) => {
+    const { id, content, completed } = item
+    const isChecked = completed ? 'checked' : ''
+    const $todoItem = document.createElement('div')
+    $todoItem.classList.add('item')
+    $todoItem.dataset.id = id
+    $todoItem.innerHTML = `
+            <div class="content">
+              <input
+                type="checkbox"
+                class='todo_checkbox' 
+                ${isChecked}
+              />
+              <label class="title">${content}</label>
+              <input type="text" value="${content}" />
+            </div>
+            <div class="item_buttons content_buttons">
+              <button class="todo_edit_button">
+                <i class="far fa-edit"></i>
+              </button>
+              <button class="todo_remove_button">
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </div>
+            <div class="item_buttons edit_buttons">
+              <button class="todo_edit_confirm_button">
+                <i class="fas fa-check"></i>
+              </button>
+              <button class="todo_edit_cancel_button">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+      `
+    return $todoItem
+  }
+
   const renderAllTodos = (todos) => {
     $todos.innerHTML = ''
     todos.forEach((item) => {
@@ -113,28 +111,32 @@
   const getTodos = () => {
     fetch(`${API_URL}?_page=${currentPage}&_limit=${limit}`)
       .then((response) => response.json())
-      .then((todos) => renderAllTodos(todos))
+      .then((todos) => {
+        renderAllTodos(todos)
+      })
       .catch((error) => console.error(error.message))
   }
 
   const addTodo = (e) => {
     e.preventDefault()
+    const content = $todoInput.value
+    if (!content) return
     const todo = {
-      content: $todoInput.value,
+      content,
       completed: false,
     }
     fetch(API_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(todo),
     })
       .then((response) => response.json())
       .then(getTodos)
       .then(() => {
-        $todoInput.focus()
         $todoInput.value = ''
+        $todoInput.focus()
       })
-      .then((error) => console.error(error.message))
+      .catch((error) => console.error(error.message))
   }
 
   const toggleTodo = (e) => {
@@ -144,7 +146,7 @@
     const completed = e.target.checked
     fetch(`${API_URL}/${id}`, {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({ completed }),
     })
       .then((response) => response.json())
@@ -156,31 +158,34 @@
     const $item = e.target.closest('.item')
     const $label = $item.querySelector('label')
     const $editInput = $item.querySelector('input[type="text"]')
-    const $contentButton = $item.querySelector('.content_buttons')
+    const $contentButtons = $item.querySelector('.content_buttons')
     const $editButtons = $item.querySelector('.edit_buttons')
     const value = $editInput.value
 
-    if (e.target.className === 'todo_edit_button') {
+    if (
+      e.target.className === 'todo_edit_button' ||
+      e.target.className === 'title'
+    ) {
       $label.style.display = 'none'
       $editInput.style.display = 'block'
-      $contentButton.style.display = 'none'
+      $contentButtons.style.display = 'none'
       $editButtons.style.display = 'block'
       $editInput.focus()
       $editInput.value = ''
       $editInput.value = value
     }
 
-    if (e.target.className === 'todo_edit_cancel_button') {
+    if (e.target.className === 'todo_edit_cancel_button' || e.keyCode === 27) {
       $label.style.display = 'block'
       $editInput.style.display = 'none'
-      $contentButton.style.display = 'block'
+      $contentButtons.style.display = 'block'
       $editButtons.style.display = 'none'
       $editInput.value = $label.innerText
     }
   }
 
   const editTodo = (e) => {
-    if (e.target.className === 'todo_edit_confirm_button') {
+    if (e.target.className === 'todo_edit_confirm_button' || e.keyCode === 13) {
       const $item = e.target.closest('.item')
       const id = $item.dataset.id
       const $editInput = $item.querySelector('input[type="text"]')
@@ -188,24 +193,26 @@
 
       fetch(`${API_URL}/${id}`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({ content }),
       })
         .then((response) => response.json())
         .then(getTodos)
-        .then((error) => console.error(error))
+        .catch((error) => console.error(error.message))
     }
   }
 
   const removeTodo = (e) => {
-    if (e.target.className === 'todo_remove_button') {
-      const $item = e.target.closest('.item')
-      const id = $item.dataset.id
+    if (e.target.className !== 'todo_remove_button') return
+    const $item = e.target.closest('.item')
+    const id = $item.dataset.id
 
-      fetch(`${API_URL}/${id}`, { method: 'DELETE' })
-        .then(getTodos)
-        .then((error) => console.error(error))
-    }
+    fetch(`${API_URL}/${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then(getTodos)
+      .catch((error) => console.error(error.message))
   }
 
   const init = () => {
@@ -213,11 +220,15 @@
       getTodos()
       pagination()
     })
+
     $form.addEventListener('submit', addTodo)
     $todos.addEventListener('click', toggleTodo)
     $todos.addEventListener('click', changeEditMode)
+    $todos.addEventListener('keydown', changeEditMode)
     $todos.addEventListener('click', editTodo)
+    $todos.addEventListener('keydown', editTodo)
     $todos.addEventListener('click', removeTodo)
   }
+
   init()
 })()
