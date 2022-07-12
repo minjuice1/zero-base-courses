@@ -1,0 +1,28 @@
+#map {
+  height: 400px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.container button {
+  background-color: rgb(151, 193, 222);
+  border: 1px solid rgb(156, 152, 152);
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: rgb(28, 119, 184);
+  color: #ffffff;
+}
+
+.geolocation_button {
+  width: 170px;
+  height: 50px;
+}
