@@ -17,15 +17,15 @@
       this.operation = null
     }
 
-    appendNumber(number) {
-      console.log(this.currentValue)
-      console.log('number', number)
-      // if (this.currentValue && number) {
-      //   this.currentValue = ''
-      //   return
-      // }
+    reset() {
+      this.currentValue = ''
+      this.prevValue = ''
+      this.resetOperation()
+    }
 
+    appendNumber(number) {
       if (number === '.' && this.currentValue.includes('.')) return
+
       this.currentValue = this.currentValue.toString() + number.toString()
     }
 
@@ -65,13 +65,7 @@
       }
 
       this.currentValue = calculation.toString()
-      this.prevValue = ''
-      this.resetOperation()
-    }
-
-    reset() {
-      this.currentValue = ''
-      this.prevValue = ''
+      console.log(this.currentValue)
       this.resetOperation()
     }
 
