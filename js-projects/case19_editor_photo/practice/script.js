@@ -70,11 +70,12 @@
       downloader.style.display = 'none'
       downloader.setAttribute('href', url)
       downloader.setAttribute('download', 'canvas.png')
-      this.container.appendChild(downloader)
-      downloader.click()
-      setTimeout(() => {
-        this.container.removeChild(downloader)
-      }, 100)
+      console.log(this.container)
+      // this.container.appendChild(downloader)
+      // downloader.click()
+      // setTimeout(() => {
+      //   this.container.removeChild(downloader)
+      // }, 100)
     }
   }
 

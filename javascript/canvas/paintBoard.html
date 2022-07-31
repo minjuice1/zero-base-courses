@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Canvas</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			canvas {
+				background: #eee;
+			}
+			.tools-container {
+				display: flex;
+				height: 40px;
+				margin-left: 10px;
+				align-items: center;
+			}
+			.tool-btn {
+				margin: 0 5px;
+				padding: 0;
+				border: none;
+				background-color: transparent;
+				cursor: pointer;
+			}
+			.tool-btn img {
+				width: 30px;
+				height: 35px;
+			}
+			.color-btn {
+				width: 30px;
+				height: 30px;
+				margin-left: 2px;
+				border: 1px solid gray;
+				cursor: pointer;
+			}
+			.color-btn[data-color="black"] {
+				background-color: black;
+			}
+			.color-btn[data-color="gray"] {
+				background-color: gray;
+			}
+			.color-btn[data-color="crimson"] {
+				background-color: rgb(162, 22, 50);
+			}
+			.color-btn[data-color="red"] {
+				background-color: red;
+			}
+			.color-btn[data-color="orange"] {
+				background-color: rgb(255, 110, 43);
+			}
+			.color-btn[data-color="yellow"] {
+				background-color: yellow;
+			}
+			.color-btn[data-color="green"] {
+				background-color: rgb(80, 172, 80);
+			}
+			.color-btn[data-color="skyblue"] {
+				background-color: rgb(57, 166, 209);
+			}
+			.color-btn[data-color="blue"] {
+				background-color: rgb(63, 63, 200);
+			}
+			.color-btn[data-color="purple"] {
+				background-color: rgb(190, 64, 190);
+			}
+			.width-liners {
+				display: flex;
+				margin-left: 15px;
+				height: 30px;
+				cursor: pointer;
+				align-items: center;
+			}
+			.width-liners div {
+				display: flex;
+				align-items: center;
+				height: 40px;
+			}
+			.liner-thin-btn {
+				width: 35px;
+				height: 1px;
+				background-color: black;
+				cursor: pointer;
+			}
+			.liner-normal-btn {
+				width: 35px;
+				height: 10px;
+				margin-left: 15px;
+				background-color: black;
+				cursor: pointer;
+			}
+			.liner-thick-btn {
+				width: 35px;
+				height: 15px;
+				margin: 0 15px;
+				background-color: black;
+				cursor: pointer;
+			}
+			.goback-btn,
+			.gohead-btn,
+			.download-btn {
+				display: flex;
+				height: 40px;
+				align-items: center;
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			.download-btn {
+				margin-left: 8px;
+			}
+			.goback-btn > img,
+			.gohead-btn > img,
+			.download-btn > img {
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<canvas class="canvas" width="800" height="400"></canvas>
+			<div class="tools-container">
+				<div class="goback-btn">
+					<img src="./img/goback.png" alt="goback" />
+				</div>
+				<div class="gohead-btn">
+					<img src="./img/gohead.jpg" alt="gohead" />
+				</div>
+				<div class="tools">
+					<button class="tool-btn">
+						<img src="./img/pencil.jpg" data-tool="pencil" alt="pencil" />
+					</button>
+					<button class="tool-btn">
+						<img src="./img/paint.jpg" data-tool="paint" alt="paint" />
+					</button>
+					<button class="tool-btn">
+						<img src="./img/eraser.jpg" data-tool="eraser" alt="eraser" />
+					</button>
+				</div>
+				<div class="width-liners">
+					<div class="liner-btn">
+						<button class="liner-thin-btn" data-liner="2"></button>
+					</div>
+					<div class="liner-btn">
+						<button class="liner-normal-btn" data-liner="8"></button>
+					</div>
+					<div class="liner-btn">
+						<button class="liner-thick-btn" data-liner="20"></button>
+					</div>
+				</div>
+				<div class="color-btns">
+					<button class="color-btn" data-color="black"></button>
+					<button class="color-btn" data-color="gray"></button>
+					<button class="color-btn" data-color="crimson"></button>
+					<button class="color-btn" data-color="red"></button>
+					<button class="color-btn" data-color="orange"></button>
+					<button class="color-btn" data-color="yellow"></button>
+					<button class="color-btn" data-color="green"></button>
+					<button class="color-btn" data-color="skyblue"></button>
+					<button class="color-btn" data-color="blue"></button>
+					<button class="color-btn" data-color="purple"></button>
+				</div>
+				<div class="download-btn">
+					<img src="./img/download.png" alt="download" />
+				</div>
+			</div>
+		</main>
+	</body>
+	<script src="./paintBoard.js"></script>
+</html>
